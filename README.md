@@ -16,6 +16,9 @@ A Node.js application for remote control of Android devices connected via USB. T
 - **Auto-detection:** Automatically detects devices connected via ADB and populates `phones.json`.
 - **Security:** Configurable Basic Authentication.
 
+## Quick Demo
+![scrcpy-web demo](./assets/scrcpy-web-demo.gif)
+
 ## Project Architecture
 
 - `server.js`: Express and Socket.io server. Manages the `scrcpy` -> FIFO -> `ffmpeg` pipeline.
