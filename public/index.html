@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrcpy Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Scrcpy Web</h1>
+            <div id="tabs-container">
+                <!-- Tabs will be injected here -->
+            </div>
+        </header>
+        
+        <div id="content-area">
+            <div id="video-wrapper">
+                <video id="player" autoplay muted playsinline></video>
+                <div id="status-message">Select a device to start streaming</div>
+            </div>
+            
+            <div id="controls-sidebar">
+                <h3>Controls</h3>
+                <button class="control-btn" data-key="3">Home</button>
+                <button class="control-btn" data-key="4">Back</button>
+                <button class="control-btn" data-key="187">Recents</button>
+                <hr>
+                <button class="control-btn" data-key="24">Vol +</button>
+                <button class="control-btn" data-key="25">Vol -</button>
+                <hr>
+                <button class="control-btn" data-key="26">Power</button>
+                <button class="control-btn" data-key="82">Menu</button>
+                <button class="control-btn" data-key="223">Sleep</button>
+                <button class="control-btn" data-key="224">Wake</button>
+                <hr>
+                <!-- D-Pad -->
+                <div class="dpad-controls">
+                    <div class="dpad-row">
+                        <button class="control-btn" data-key="19">↑</button>
+                    </div>
+                    <div class="dpad-row">
+                        <button class="control-btn" data-key="21">←</button>
+                        <button class="control-btn" data-key="66">Enter</button>
+                        <button class="control-btn" data-key="22">→</button>
+                    </div>
+                    <div class="dpad-row">
+                        <button class="control-btn" data-key="20">↓</button>
+                    </div>
+                </div>
+                <hr>
+                <button class="control-btn" id="btn-swipe-up">Unlock / Swipe Up</button>
+                <button class="control-btn danger" id="btn-reconnect">Reconnect Stream</button>
+                
+                <hr>
+                <div class="settings-box">
+                    <h4>Stream Settings</h4>
+                    <label>
+                        Bitrate: <span id="bitrate-value">2</span> Mbps
+                        <input type="range" id="bitrate-slider" min="1" max="8" value="2" step="1">
+                    </label>
+                    <label>
+                        Max Resolution:
+                        <select id="resolution-select" style="width: 100%; margin-top: 5px;">
+                            <option value="0">Native</option>
+                            <option value="1080">1080p</option>
+                            <option value="720" selected>720p</option>
+                            <option value="480">480p</option>
+                        </select>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="audio-toggle"> Enable Audio
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/libs/jmuxer/dist/jmuxer.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

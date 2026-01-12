@@ -1,0 +1,8 @@
+phones.json
+node_modules/
+.env
+-
+/.Trash-1000
+/test
+*.mkv
+*.h264

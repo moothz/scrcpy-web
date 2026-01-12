@@ -1,0 +1,21 @@
+{
+  "name": "scrcpy-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test-client.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jmuxer": "^2.1.0",
+    "pm2": "^6.0.14",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3"
+  }
+}
